@@ -2,13 +2,15 @@
 
 # Fiche technique découverte d’ Electron.js
 
-# Qu'es une application de bureau ?
-Un appli de bureau est un logiciel installer sur notre ordi (ex: GotoMeeting) tandis qu'un appli web est un session qui a lieu entièrement depuis une fenêtre de navigation<br>
+# Qu'est-ce qu'une application de bureau ?
 
-# Qu'es qu’électron ?
-Electron est une librairie open source développé par GitHub pour créer des applications bureau multi-platform (mac Windows linux) développer avec des techno web HTML, CSS et JavaScript. Electron se base sur le natigateur libre Chromium et sur NodeJS.<br>
+Une appli de bureau est un logiciel installé sur notre ordi (ex: GotoMeeting, Discord) tandis qu'une appli web est une session qui a lieu entièrement depuis une fenêtre de navigation<br>
 
-Exemple de logiciel de bureau : VSC Twitch sont développer avec électron<br>
+# Qu'est-ce qu'électron ?
+
+Electron est une librairie open source qui a été développé par GitHub pour créer des applications bureau multi-platform (Mac Windows,Linux) développer avec des technos web HTML, CSS et JavaScript. Electron se base sur le navigateur libre Chromium et sur NodeJS.<br>
+
+Exemple de logiciel de bureau : VSC Twitch sont développés avec électron<br>
 
 Avantages :
 <ul>
@@ -20,7 +22,7 @@ Avantages :
 </ul>
 
 
-Inconvénients :Pour un petit projet électrons occupé beaucoup de place 50 et 150Mo (intègre un navigateur web)<br>
+Inconvénients :Pour un petit projet électrons occupé beaucoup de places 50 et 150Mo (intègre un navigateur web)<br>
 
 Autre techno pour crée des appli web :Lorca,Webview<br>
 
