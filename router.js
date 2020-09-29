@@ -5,9 +5,6 @@ const http = require('http').Server(expressApp);
  
 const path = require('path');
  
-/* Ajout de express-ejs-layouts */
-const ejsLayout = require('express-ejs-layouts');
- 
 /* Initialisation des variables */
 const router = {
     isStarted: false
@@ -39,15 +36,12 @@ function init(callback) {
     /* On s'assure que le serveur n'est vraiment pas démarré */
     router.isStarted = false;
  
-    /* Ajout de express-ejs-layouts */
-    expressApp.use(ejsLayout);
- 
     /* J'utilise ici EJS comme moteur de template */
     expressApp.set('view engine', 'ejs');
  
     /* assets sera le répertoire où se trouverons nos fichiers côté client */
     expressApp.use(express.static(path.join(__dirname, 'assets')));
- 
+     
     /* views est défini comme notre dossier de vues par défaut */
     expressApp.set('views', path.join(__dirname, '/views/'));
  
@@ -61,6 +55,9 @@ function init(callback) {
 function loadRoutes(callback) {
     expressApp.get('/', function (req, res) {
         res.render('index');
+    });
+    expressApp.get('/signup', function (req, res) {
+        res.render('signup');
     });
  
     if (typeof callback != 'undefined') {
