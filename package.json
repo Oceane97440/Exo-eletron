@@ -1,0 +1,29 @@
+{
+  "name": "exo-eletron",
+  "version": "1.0.0",
+  "description": "Une appli de bureau est un logiciel installé sur notre ordi (ex: GotoMeeting, Discord) tandis qu'une appli web est une session qui a lieu entièrement depuis une fenêtre de navigation<br>",
+  "main": "main.js",
+  "scripts": {
+    "start-electron": "electron .",
+    "start": "node ./main-without-electron.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oceane97440/Exo-eletron.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Oceane97440/Exo-eletron/issues"
+  },
+  "homepage": "https://github.com/Oceane97440/Exo-eletron#readme",
+  "devDependencies": {
+    "electron": "^10.1.2"
+  },
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "nodemon": "^2.0.4"
+  }
+}
