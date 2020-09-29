@@ -12,7 +12,7 @@ function createWindow() {
     });
  
     /* Si vous décommentez cette ligne, vous verrez la console de débug Chrome */
-    /* window.webContents.openDevTools(); */
+     window.webContents.openDevTools(); 
  
     /* Display the homepage of the server */
     window.loadURL('http://127.0.0.1:3000');

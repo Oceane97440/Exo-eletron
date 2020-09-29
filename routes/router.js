@@ -2,7 +2,8 @@
 const express = require('express');
 const expressApp = express();
 const http = require('http').Server(expressApp);
- 
+
+const index = require("../controllers/index");
 const path = require('path');
  
 /* Initialisation des variables */
@@ -37,13 +38,7 @@ function init(callback) {
     router.isStarted = false;
  
     /* J'utilise ici EJS comme moteur de template */
-    expressApp.set('view engine', 'ejs');
- 
-    /* assets sera le répertoire où se trouverons nos fichiers côté client */
-    expressApp.use(express.static(path.join(__dirname, 'assets')));
-     
-    /* views est défini comme notre dossier de vues par défaut */
-    expressApp.set('views', path.join(__dirname, '/views/'));
+   
  
     if (typeof callback != 'undefined') {
         callback();
@@ -53,13 +48,12 @@ function init(callback) {
 /* ROUTES */
  
 function loadRoutes(callback) {
-    expressApp.get('/', function (req, res) {
-        res.render('index');
-    });
-    expressApp.get('/signup', function (req, res) {
-        res.render('signup');
-    });
- 
+
+    expressApp.get("/", index.index);
+    expressApp.get("/signup", index.signup);
+
+
+  
     if (typeof callback != 'undefined') {
         callback();
     }
