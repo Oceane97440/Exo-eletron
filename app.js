@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const expressApp = express();
+const { Sequelize } = require('sequelize');
+
 
 var app = {};
 
@@ -17,6 +19,18 @@ expressApp.set('view engine', 'ejs');
 expressApp.use(express.static('public'));
 
 
+
+const sequelize = new Sequelize({
+  dialect: 'sqlite',
+  storage: './cars.db'
+});
+try {
+    sequelize.authenticate();
+   console.log('Connection has been established successfully.');
+ } catch (error) {
+   console.error('Unable to connect to the database:', error);
+ }
+ 
  
 function start(callback) {
     init(function() {
@@ -37,7 +51,8 @@ function init(callback) {
         callback();
     }
 }
- 
+ module.exports = sequelize;
 module.exports = {
-    start: start
+    start: start,
 };
+

@@ -51,6 +51,8 @@ function loadRoutes(callback) {
 
     expressApp.get("/", index.index);
     expressApp.get("/signup", index.signup);
+    expressApp.get("/test", index.test);
+
 
 
   
