@@ -2,8 +2,11 @@ const path        = require('path');
 const express     = require('express');
 const expressApp  = express();
 const http        = require('http').Server(expressApp);
-const { Sequelize } = require('sequelize');
-const sqlite3 = require("sqlite3").verbose();
+const database    = require('./config/database');
+
+// Import des models
+const Individu = require('./models/individu');
+
 
 // Routes handler
 const index = require('./routes/index');
@@ -27,17 +30,24 @@ function start(callback) {
       // Handle routes function
       loadRoutes(function () {
 
+          /* Mettre les relation ici */
+          // 1 vehicles can have many kilometerSheet
+          // Persons.hasMany(KilometerSheets);
 
-            // starting web server
-            http.listen(3000, function () {
-              console.log('Application is running on port 3000');
-              router.isStarted = true;
-              if (typeof callback != 'undefined') {
-                callback();
-              }
-            });
-
-          // });
+          // database connection and sync
+          database
+            // .sync({force: true})
+            .sync()
+            .then(result => {
+              // starting web server
+              http.listen(3000, function () {
+                console.log('Application is running on port 3000');
+                router.isStarted = true;
+                if (typeof callback != 'undefined') {
+                  callback();
+                }
+              });
+          })
       });
     });
   } else {

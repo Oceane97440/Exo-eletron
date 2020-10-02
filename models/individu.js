@@ -1,22 +1,44 @@
-'use strict';
-module.exports = (sequelize, DataTypes) => {
-    const individu = sequelize.define('individu', {
+/**
+ * Define Individu model
+ */
+const { Sequelize, DataTypes, Model } = require('sequelize');
+
+const sequelize = require('../config/database');
+
+const Individu = sequelize.define('individu', {
+    id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        allowNull: false,
+        primaryKey: true
+    },
+    nom: {
+        type: DataTypes.STRING,
+        allowNull: false,
         
-        nom: DataTypes.STRING,
-        prenom: DataTypes.STRING,
-        email:DataTypes.STRING,
-        mdp:DataTypes.STRING,
-        fonction:DataTypes.STRING,
-        role:DataTypes.BIGINT
+    },
+    prenom: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true
+    },
+    mdp: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    fonction: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    role: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
+    }
+}, { timestamps: true });
 
-
-    }, {
-        tableName: 'individu',
-      timestamps: false
-    });
-    // entite.associate = function(models) {
-    //   // associations can be defined here
-    // };
-    return individu;
-  };
-
+module.exports = Individu;

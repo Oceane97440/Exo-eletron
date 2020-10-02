@@ -1,17 +1,16 @@
-const path        = require('path');
 const controller = {}; 
-const { Sequelize, DataTypes, models } = require('sequelize');
-const individus = require('../models').individu;
+const Individus = require('../models/individu');
 
 
 //model
+controller.index = async(req, res, next) => {
 
-
-controller.index = async(req, res) => {
-
-   var users = await individus.findAll({});
-
-    console.log(users)
+   try {
+      const users = await Individus.findAll();
+      console.log(users)
+   } catch (error) {
+      console.log(error)
+   }
   
  //res.render('index.ejs')
 
