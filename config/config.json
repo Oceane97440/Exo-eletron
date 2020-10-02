@@ -1,9 +1,28 @@
+
 {
   "development": {
     "username": "root",
     "password": null,
-    "database": "Cars",
+    "database": "kilometre-exo",
     "host": "127.0.0.1",
-    "dialect": "sqlite"
+    "dialect": "sqlite",
+    "storage": "./kilometre_exo"
+  },
+
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "kilometre-exo",
+    "host": "127.0.0.1",
+    "dialect": "sqlite",
+    "storage": "./kilometre_exo"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "kilometre-exo",
+    "host": "127.0.0.1",
+    "dialect": "sqlite",
+    "storage": "./kilometre_exo"
   }
 }

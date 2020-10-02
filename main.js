@@ -7,7 +7,7 @@ function createWindow() {
     /* Créer une fenêtre de 800px par 600px sans bordures */
     window = new electron.BrowserWindow({
         width: 800,
-        height: 600,
+        height: 700,
         frame: false
     });
  
@@ -25,6 +25,7 @@ function createWindow() {
  
 /* On attend qu'Electron.js soit prêt pour créer la fenêtre */
 electron.app.on('ready', function () {
+
     app.start(function () {
         createWindow();
     });
