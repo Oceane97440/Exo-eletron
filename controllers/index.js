@@ -9,7 +9,7 @@ const individus = require('../models').individu;
 
 controller.index = async(req, res) => {
 
-   var users = await individus.findAll();
+   var users = await individus.findAll({});
 
     console.log(users)
   
