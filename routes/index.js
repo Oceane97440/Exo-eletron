@@ -1,10 +1,9 @@
-const path        = require('path');
 const express     = require('express');
 const expressApp  = express();
 const http        = require('http').Server(expressApp);
 var router = express.Router();
 
-const individuController = require('../controllers/index');
+const individuController = require('../controllers/controller.index');
 
 
 /* GET home page. */

@@ -1,0 +1,46 @@
+
+<%  include ../layouts/header.ejs %> 
+<%  include ../layouts/navbar.ejs %> 
+
+<h1>Entité</h1>
+
+<div id="card-forecast" class="card">
+    <div class="card-header">
+        <h4 class="card-title">
+            Edit entité
+        </h4>
+    </div>
+    <div class="card-body">
+        <form action="/entite/update/<%= entite.id %>" id="manager" method="POST">
+
+            <div class="form-group">
+                <label for="entite_name">Nom de l'entité</label>
+                <input type="text" class="form-control" name="entite_name" id="entite_name" value="<%= entite.entite_name %>"
+                   required>
+            </div>
+    
+			<div class="form-group">
+				<label for="entite_type">Format</label>
+				<select class="form-control" name="entite_type" id="entite_type" value="<%= entite.entite_type %>" required="required">
+                    <option>Sélectionner type</option>
+                    <option value="Entreprise">Entreprise</option>
+                    <option value="Association">Association</option>
+				
+				</select>
+			</div>
+
+
+    </div>
+    <div class="card-footer bg-transparent border-success justify-content-center d-flex">
+        <div class="col-sm-12 text-right">
+            <input type="submit" name="submit" class="btn btn-block btn-primary" value="Valider" />
+        </div>
+    </div>
+    </form>
+</div>
+<br>
+
+
+
+    
+    <%  include ../layouts/footer.ejs %> 
