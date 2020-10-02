@@ -1,6 +1,5 @@
 const controller = {};
 const Entity=require('../models/entite');
-const { param } = require('../routes/entite');
 
 
 //model
