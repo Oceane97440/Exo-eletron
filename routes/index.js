@@ -14,7 +14,9 @@ const individuController = require('../controllers/index');
 
 
   router.get("/", individuController.index);
- // router.get("/signup", individuController.signup);
+  router.get("/signup", individuController.signup);
+  router.post("/signup/add", individuController.signup_add);
+
  // router.get("/test", individuController.test);
 
   module.exports = router;
