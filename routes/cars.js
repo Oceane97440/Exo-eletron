@@ -9,10 +9,10 @@ const carsController = require('../controllers/controller.cars');
 
 
   router.get("/", carsController.index);
-//   router.post("/add", carsController.entite_add);
+  router.post("/add", carsController.cars_add);
 
-//   router.get("/edit/:id",carsController.entite_edit)
-//   router.post("/update/:id",carsController.entite_update)
-//   router.get('/delete/:id',carsController.entite_delete)
+ router.get("/edit/:id",carsController.cars_edit)
+router.post("/update/:id",carsController.cars_update)
+  router.get('/delete/:id',carsController.cars_delete)
 
   module.exports = router;

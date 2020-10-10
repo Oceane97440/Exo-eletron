@@ -1,5 +1,5 @@
 /**
- * Define Individu model
+ * Define Cars model
  */
 const { Sequelize, DataTypes, Model } = require('sequelize');
 
@@ -12,7 +12,7 @@ const Car = sequelize.define('vehicules', {
         allowNull: false,
         primaryKey: true
     },
-    marques: {
+    marque: {
         type: DataTypes.STRING,
         allowNull: false,
         

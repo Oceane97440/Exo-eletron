@@ -1,9 +1,9 @@
-const controller = {};
+const controller_entity = {};
 const Entity=require('../models/entite');
 
 
 //model
-controller.index = async (req, res, next) => {
+controller_entity.index = async (req, res, next) => {
 
    
 
@@ -27,7 +27,7 @@ controller.index = async (req, res, next) => {
 
 
 
-controller.entite_add = async (req, res) => {
+controller_entity.entite_add = async (req, res) => {
 
    var entite_name = req.body.entite_name
    var entite_type = req.body.entite_type
@@ -53,7 +53,7 @@ controller.entite_add = async (req, res) => {
 
 
 }
-controller.entite_edit = async (req, res) => {
+controller_entity.entite_edit = async (req, res) => {
    var id = req.params.id;
 
    await Entity.findOne({
@@ -70,7 +70,7 @@ controller.entite_edit = async (req, res) => {
 
 }
 
-controller.entite_update = async (req, res) => {
+controller_entity.entite_update = async (req, res) => {
    var id = req.params.id;
    var entite_name = req.body.entite_name;
    var entite_type=req.body.entite_type;
@@ -114,7 +114,7 @@ controller.entite_update = async (req, res) => {
 
 
 
-controller.entite_delete = async (req, res) => {
+controller_entity.entite_delete = async (req, res) => {
    var id = req.params.id;
    try {
 
@@ -134,4 +134,4 @@ controller.entite_delete = async (req, res) => {
   
 }
 
-module.exports = controller;
+module.exports = controller_entity;

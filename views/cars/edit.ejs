@@ -1,0 +1,56 @@
+
+<%  include ../layouts/header.ejs %> 
+<%  include ../layouts/navbar.ejs %> 
+
+<h1>Cars</h1>
+
+<div id="card-forecast" class="card">
+    <div class="card-header">
+        <h4 class="card-title">
+            Edit cars
+        </h4>
+    </div>
+    <div class="card-body">
+        <form action="/cars/update/<%= car.id %>" id="manager" method="POST">
+
+            <div class="form-group">
+                <label for="marque">Nom de l'entité</label>
+                <input type="text" class="form-control" name="marque" id="marque" value="<%= car.marque %>"
+                   required>
+            </div>
+    
+            <div class="form-group">
+				<label for="model">Modèle</label>
+                <input type="text" class="form-control" name="model" id="model" value="<%= car.model %>">
+
+			</div>
+    
+			<div class="form-group">
+				<label for="puissance">Puissance</label>
+                <input type="number" class="form-control" name="puissance" id="puissance" value="<%= car.puissance %>">
+
+            </div>
+            
+            
+			<div class="form-group">
+				<label for="annee">Année</label>
+                <input type="month" class="form-control" name="annee" id="annee" value="<%= car.annee %>">
+
+			</div>
+
+
+
+    </div>
+    <div class="card-footer bg-transparent border-success justify-content-center d-flex">
+        <div class="col-sm-12 text-right">
+            <input type="submit" name="submit" class="btn btn-block btn-primary" value="Valider" />
+        </div>
+    </div>
+    </form>
+</div>
+<br>
+
+
+
+    
+    <%  include ../layouts/footer.ejs %> 
