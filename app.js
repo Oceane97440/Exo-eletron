@@ -8,11 +8,13 @@ const database    = require('./config/database');
 const Individu = require('./models/individu');
 const Entite=require('./models/entite')
 const Vehicule=require('./models/cars')
+const Fiches_km=require('./models/fiches_km');
 
 // Routes handler
 const index = require('./routes/index');
 const entité=require('./routes/entite')
 const vehicule=require('./routes/cars')
+const fiches=require('./routes/fiches')
 /* variable initialisation's */
 const router = {
   isStarted: false
@@ -98,6 +100,11 @@ function loadRoutes(callback) {
   if (typeof callback != 'undefined') {
     callback();
   }
+  expressApp.use("/fiches", fiches);
+  if (typeof callback != 'undefined') {
+    callback();
+  }
+
 }
 
 module.exports = {
