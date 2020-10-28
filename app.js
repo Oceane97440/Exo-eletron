@@ -89,18 +89,12 @@ function init(callback) {
  */
 function loadRoutes(callback) {
   expressApp.use("/", index);
-  if (typeof callback != 'undefined') {
-    callback();
-  }
   expressApp.use("/entite", entité);
-  if (typeof callback != 'undefined') {
-    callback();
-  }
   expressApp.use("/cars", vehicule);
-  if (typeof callback != 'undefined') {
-    callback();
-  }
   expressApp.use("/fiches", fiches);
+
+
+  
   if (typeof callback != 'undefined') {
     callback();
   }

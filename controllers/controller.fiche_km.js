@@ -4,6 +4,7 @@ const Fiche_km = require('../models/fiches_km');
 
 controller_fiches.index = async (req, res, next) => {
 
+//  datetime('YYYY-MM-DD HH:MM')
    try {
       await Fiche_km.findAll({}).then(fiches => {
          //  res.send(campaigns)
@@ -63,49 +64,58 @@ controller_fiches.fiches_add = async (req, res) => {
 
 
 }
-/*
 
-controller_fiches.cars_edit = async (req, res) => {
+
+controller_fiches.fiches_edit = async (req, res) => {
    var id = req.params.id;
 
-   await Cars.findOne({
+   await Fiche_km.findOne({
      where: {
        id: id
      }
  
-   }).then(car => {
+   }).then(fiche => {
  
-     res.render('cars/edit', {
-      car: car,
+     res.render('fiches/edit', {
+      fiche: fiche,
      })
    })
 
 }
 
+controller_fiches.fiches_update = async (req, res) => {
 
-controller_fiches.cars_update = async (req, res) => {
-   var id = req.params.id;
-   var marque = req.body.marque
-   var model = req.body.model
-   var puissance=req.body.puissance
-   var annee=req.body.annee
+  var id = req.params.id;
+
+  var date = req.body.date
+  var trajet_start = req.body.trajet_start
+  var trajet_end =req.body.trajet_end
+  var motif=req.body.motif
+  var commentaire=req.body.commentaire
+  var compteur_start=req.body.compteur_start
+  var compteur_end=req.body.compteur_end
+  var distance=compteur_end - compteur_start
 
  
    try {
  
  
-     await Cars.findOne({
+     await Fiche_km.findOne({
        where: {
          id: id
        }
  
      }).then(() => {
-       Cars.update({
+       Fiche_km.update({
 
-         marque: marque,
-         model: model,
-         puissance:puissance,
-         annee:annee      
+        date: date,
+        trajet_start: trajet_start,
+        trajet_end:trajet_end,
+        motif:motif,  
+        commentaire:commentaire ,    
+        compteur_start:compteur_start,
+        compteur_end:compteur_end,
+        distance:distance    
 
        }, {
          where: {
@@ -113,7 +123,7 @@ controller_fiches.cars_update = async (req, res) => {
          }
  
        }).then(
-         res.send('Modif cars')
+         res.send('Modif fiche')
          // res.send('Update' + id)
  
        ).catch(function (error) {
@@ -133,17 +143,19 @@ controller_fiches.cars_update = async (req, res) => {
 
 
 
-controller_fiches.cars_delete = async (req, res) => {
+
+
+controller_fiches.fiches_delete = async (req, res) => {
    var id = req.params.id;
    try {
 
-      await Cars.destroy({
+      await Fiche_km.destroy({
          where: {
            id: id
          }
        }).then(() => {
          // console.log(response)
-         res.send("La fiche cars a bien était supprimé")
+         res.redirect('/fiches')
        })
 
    } catch (error) {
@@ -160,7 +172,6 @@ controller_fiches.cars_delete = async (req, res) => {
 
 
 
-*/
 
 
 

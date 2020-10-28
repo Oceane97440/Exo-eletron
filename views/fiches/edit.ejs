@@ -1,0 +1,76 @@
+
+<%  include ../layouts/header.ejs %> 
+<%  include ../layouts/navbar.ejs %> 
+
+<h1>Entité</h1>
+
+<div id="card-forecast" class="card">
+    <div class="card-header">
+        <h4 class="card-title">
+            Edit entité
+        </h4>
+    </div>
+    <div class="card-body">
+        <form action="/fiches/update/<%= fiche.id %>" id="manager" method="POST">
+
+            <div class="form-group">
+                <label for="date">Date du jour de la fiches km</label>
+                <input type="datetime-local" class="form-control" name="date" id="date" value="<%= fiche.date %>"
+                   required>
+            </div>
+            <div class="form-group">
+				<label for="trajet_start">Début de trajet</label>
+                <input type="datetime-local" class="form-control" name="trajet_start" id="trajet_start"value="<%= fiche.trajet_start %>">
+
+			</div>
+    
+			<div class="form-group">
+				<label for="trajet_end">Fin de trajet</label>
+                <input type="datetime-local" class="form-control" name="trajet_end" id="trajet_end" value="<%= fiche.trajet_end %>">
+
+            </div>
+            
+            
+			<div class="form-group">
+				<label for="motif">Objet du déplacement</label>
+
+                <select class="form-control" name="motif" id="motif" required="required" value="<%= fiche.motif %>">					
+                    <option value="Client">Client</option>
+                    <option value="Projet">Projet</option>
+                    <option value="Reunion">Réunion</option>
+                </select>
+                
+            </div>
+            
+            <div class="form-group">
+				<label for="commentaire">Commentaires</label>
+                <input type="text" class="form-control" name="commentaire" id="commentaire" value="<%= fiche.commentaire %>">
+
+            </div>
+            
+            <div class="form-group">
+				<label for="compteur_start">Relevé compteur début</label>
+                <input type="number" class="form-control" name="compteur_start" id="compteur_start" value="<%= fiche.compteur_start %>">
+
+            </div>
+            <div class="form-group">
+				<label for="compteur_end">Relevé compteur fin</label>
+                <input type="number" class="form-control" name="compteur_end" id="compteur_end" value="<%= fiche.compteur_end %>">
+
+            </div>
+
+
+    </div>
+    <div class="card-footer bg-transparent border-success justify-content-center d-flex">
+        <div class="col-sm-12 text-right">
+            <input type="submit" name="submit" class="btn btn-block btn-primary" value="Valider" />
+        </div>
+    </div>
+    </form>
+</div>
+<br>
+
+
+
+    
+    <%  include ../layouts/footer.ejs %> 
